@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Christmas Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ❄️ SNOW -->
+<div class="snow-container"></div>
+
+<!-- SCREEN 1 -->
+<div id="screen1" class="screen active">
+  <div class="content">
+    <h2 class="title">For someone special</h2>
+    <p class="tap-top">Tap me!</p>
+    <img src="gift.png" class="wave gift-img" onclick="nextScreen(1)">
+  </div>
+</div>
+
+<!-- SCREEN 2 -->
+<div id="screen2" class="screen">
+  <div class="content">
+    <div class="paper-card">
+      <img src="snowman.png" class="snowman-img wave">
+      <h2>This Christmas,<br>something special for you</h2>
+      <button onclick="nextScreen(2)">Open it</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 3 -->
+<div id="screen3" class="screen">
+  <div class="content">
+    <h2>Just for you</h2>
+    <p>I don’t need a gift, because…</p>
+
+    <div class="card-container">
+      <div class="flip-card" onclick="flip(this)">
+        <div class="flip-inner">
+          <div class="flip-front">💗</div>
+          <div class="flip-back">You</div>
+        </div>
+      </div>
+      <div class="flip-card" onclick="flip(this)">
+        <div class="flip-inner">
+          <div class="flip-front">💗</div>
+          <div class="flip-back">are</div>
+        </div>
+      </div>
+      <div class="flip-card" onclick="flip(this)">
+        <div class="flip-inner">
+          <div class="flip-front">💗</div>
+          <div class="flip-back">my</div>
+        </div>
+      </div>
+      <div class="flip-card" onclick="flip(this)">
+        <div class="flip-inner">
+          <div class="flip-front">❤️</div>
+          <div class="flip-back">Everything</div>
+        </div>
+      </div>
+      <div class="flip-card" onclick="flip(this)">
+        <div class="flip-inner">
+          <div class="flip-front">❤️</div>
+          <div class="flip-back">Forever</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 4 -->
+<div id="screen4" class="screen">
+  <div class="content">
+    <div class="letter-card colorful-frame">
+
+      <h2 class="fixed-title">Merry Christmas<br>to my Cutiepie</h2>
+
+      <!-- IMAGE VIEW -->
+      <div id="imageView" class="center-box">
+        <div class="santa-wrapper">
+          <img src="santa.png" class="santa-img wave" onclick="showMessage()">
+          <div class="ribbon" onclick="showMessage()">Tap to read</div>
+        </div>
+      </div>
+
+      <!-- MESSAGE VIEW -->
+      <div id="messageView" class="message-view" onclick="showImage()">
+        <p>
+          This Christmas, I just want you to know<br><br>
+          how special you are to me.<br><br>
+          You are not just a part of my life,<br>
+          you are the reason behind so many smiles and little moments.<br><br>
+          I may not be perfect,<br>
+          but I promise I’ll always be there for you ❤️
+        </p>
+        <small>(Tap to go back)</small>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
