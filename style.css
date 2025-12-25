@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: cursive;
+  background: #fdfefe;
+  overflow-x: hidden;
+}
+
+/* SCREENS */
+.screen {
+  display: none;
+  height: 100vh;
+}
+
+.screen.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* UNIVERSAL CONTENT WRAPPER */
+.content {
+  text-align: center;
+  max-width: 100%;
+}
+
+/* TITLES */
+.title {
+  font-size: 28px;
+}
+
+.tap-top {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* 🌊 WAVE EFFECT */
+.wave {
+  animation: wave 2.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* IMAGES */
+.gift-img {
+  width: 180px;
+  cursor: pointer;
+}
+
+.snowman-img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.santa-img {
+  width: 220px;
+  cursor: pointer;
+}
+
+/* PAPER CARD */
+.paper-card {
+  width: 340px;
+  padding: 30px;
+  background: #fffef8;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* BUTTON */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: #3498db;
+  color: white;
+  cursor: pointer;
+}
+
+/* FLIP CARDS */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.flip-card {
+  width: 110px;
+  height: 140px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffd6e0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  background: #ffb6c1;
+}
+
+/* LETTER CARD */
+.letter-card {
+  width: 380px;
+  padding: 20px;
+  background: #fffef8;
+  border-radius: 18px;
+}
+
+/* COLORFUL FRAME */
+.colorful-frame {
+  border: 6px solid transparent;
+  background-image:
+    linear-gradient(#fffef8, #fffef8),
+    linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+/* TITLE */
+.fixed-title {
+  font-style: italic;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* SANTA CENTERING */
+.center-box {
+  display: flex;
+  justify-content: center;
+}
+
+.santa-wrapper {
+  position: relative;
+}
+
+/* TAP TO READ */
+.ribbon {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  background: #e74c3c;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* MESSAGE */
+.message-view {
+  display: none;
+  padding: 20px;
+  cursor: pointer;
+}
+
+/* ❄️ SNOW */
+.snow-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: #ccefff;
+  font-size: 12px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh); }
+}
