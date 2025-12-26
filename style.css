@@ -1,0 +1,257 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0b0b12;
+  color: white;
+  font-family: cursive;
+  overflow: hidden;
+}
+
+/* SCREENS */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.screen.active {
+  display: block;
+  opacity: 1;
+}
+
+/* BACKGROUND */
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, #ff4f8b22 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* CENTER */
+.center {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* CIRCLE */
+.outline-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid #ff4f8b88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outline-circle.small {
+  width: 120px;
+  height: 120px;
+}
+
+/* IMAGE */
+.toy { width: 90px; }
+
+/* WAVE */
+.wave-only {
+  animation: wave 2.4s ease-in-out infinite;
+}
+@keyframes wave {
+  50% { transform: rotate(12deg); }
+}
+
+/* BUBBLE */
+.bubble {
+  animation: bubble 3s ease-in-out infinite;
+}
+@keyframes bubble {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* PAGE 3 BOXES */
+.bobble-box {
+  animation: bubble 3s ease-in-out infinite;
+  box-shadow: none;
+}
+
+/* TEXT */
+.hero-text {
+  color: #ff6fae;
+  font-size: 34px;
+}
+
+/* FADE */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade .8s forwards;
+}
+.delay1 { animation-delay: .3s; }
+.delay2 { animation-delay: .6s; }
+.delay3 { animation-delay: .9s; }
+@keyframes fade {
+  to { opacity: 1; transform: none; }
+}
+
+/* BUTTON */
+.btn {
+  padding: 14px 36px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(45deg,#ff4f8b,#ff77b7);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* PAGE 2 */
+.meter-card {
+  background: #1a0f18;
+  padding: 30px;
+  border-radius: 22px;
+  width: 320px;
+}
+.bar {
+  height: 14px;
+  background: #2a1520;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#fill {
+  height: 100%;
+  width: 0%;
+  background: #ff4f8b;
+}
+
+.warn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .8s;
+}
+.warn.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* PAGE 3 */
+.bars {
+  width: 100%;
+  max-width: 340px;
+}
+.bar-item {
+  background: #24121d;
+  margin: 10px 0;
+  padding: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* ENVELOPE */
+.envelope {
+  width: 320px;
+  height: 200px;
+  background: #ffc4dd;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.corner-heart {
+  position: absolute;
+  top: 8px;
+  font-size: 16px;
+  color: #d4004f;
+}
+.corner-heart.left { left: 12px; }
+.corner-heart.right { right: 12px; }
+
+.flap {
+  position: absolute;
+  inset: 0;
+  background: #ff9acb;
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  transform-origin: top;
+  transition: transform 1s ease;
+}
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+/* HEART */
+.heart-holder {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bubble-heart {
+  font-size: 48px;
+  animation: bubble 2.6s ease-in-out infinite;
+}
+
+/* TAP TO OPEN */
+.tap-open {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  font-size: 13px;
+  color: #7a003c;
+}
+
+/* NOTE */
+.note {
+  background: linear-gradient(45deg, #ff9ad5, #ffc3e8);
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 340px;
+}
+.note p {
+  color: #5a0035;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* FINAL BUTTON */
+.fade-bottom {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.fade-bottom.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hidden {
+  pointer-events: none;
+}
+.hidden.show {
+  pointer-events: auto;
+}
+
+/* FALLING */
+#falling span {
+  position: fixed;
+  top: -20px;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}

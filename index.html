@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You are special</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🎵 BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="falling"></div>
+
+<!-- PAGE 1 -->
+<div id="screen1" class="screen active">
+  <div class="bg"></div>
+  <div class="center">
+    <div class="outline-circle bubble">
+      <img src="whitecat.png" class="toy wave-only">
+    </div>
+    <h1 class="fade delay1 hero-text">Hey Saha</h1>
+    <p class="fade delay2">Do you even know how cute you are?</p>
+
+    <!-- 🔊 MUSIC STARTS HERE -->
+    <button class="btn fade delay3" onclick="startMusic(); next(1)">
+      Open This ❤️
+    </button>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div id="screen2" class="screen">
+  <div class="bg"></div>
+  <div class="center">
+    <div class="meter-card" onclick="goFromWarning()">
+      <p>Measuring your cuteness…</p>
+      <div class="bar"><div id="fill"></div></div>
+      <h2 id="percent">0%</h2>
+      <p id="warn" class="warn">
+        ⚠️ YOU ARE TOO CUTE TO HANDLE<br>
+        <small>(tap to continue)</small>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div id="screen3" class="screen">
+  <div class="bg"></div>
+  <div class="center">
+    <div class="outline-circle small bubble">❤️</div>
+
+    <h2>Just for you</h2>
+    <p>Tap each one to reveal</p>
+
+    <div class="bars">
+      <div class="bar-item bobble-box" onclick="reveal(this,'You make things feel nicer just by being around')">♡</div>
+      <div class="bar-item bobble-box" onclick="reveal(this,'You have the sweetest vibe')">♡</div>
+      <div class="bar-item bobble-box" onclick="reveal(this,'Sahasra, you make things feel lighter')">♡</div>
+      <div class="bar-item bobble-box" onclick="reveal(this,'You are naturally charming')">♡</div>
+      <div class="bar-item bobble-box" onclick="reveal(this,'Just a reminder, Saha you’re really amazing.')">♡</div>
+    </div>
+
+    <button class="btn" onclick="goFromHearts()">See more →</button>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div id="screen4" class="screen">
+  <div class="bg"></div>
+  <div class="center">
+    <h2 class="script-title">A little note for you</h2>
+
+    <div class="envelope" onclick="openEnvelope(this)">
+      <span class="corner-heart left">❤️</span>
+      <span class="corner-heart right">❤️</span>
+      <div class="flap"></div>
+
+      <div class="heart-holder">
+        <div class="bubble-heart">❤️</div>
+      </div>
+
+      <p class="tap-open">Tap to open</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div id="screen5" class="screen">
+  <div class="bg"></div>
+  <div class="center">
+    <h2 class="script-title">A little note for you</h2>
+    <div class="note">
+      <p id="typing"></p>
+    </div>
+    <button class="btn fade-bottom hidden" id="finalBtn" onclick="next(5)">
+      One more thing →
+    </button>
+  </div>
+</div>
+
+<!-- PAGE 6 -->
+<div id="screen6" class="screen">
+  <div class="bg"></div>
+  <div class="center">
+    <div class="outline-circle bubble">
+      <img src="newpic.png" class="toy wave-only">
+    </div>
+    <h2>You’ll always be special one 💖</h2>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
